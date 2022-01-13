@@ -1,6 +1,5 @@
 import React from "react";
 import AppLoading from "expo-app-loading";
-import { StatusBar } from "react-native";
 
 import { ThemeProvider } from "styled-components";
 import {
@@ -12,7 +11,7 @@ import {
 
 import { Inter_400Regular, Inter_500Medium } from "@expo-google-fonts/inter";
 
-import { Home } from "./src/screens/Home";
+import { CarDetails } from "./src/screens/CarDetails";
 import theme from "./src/styles/theme";
 
 export default function App() {
@@ -28,12 +27,7 @@ export default function App() {
   }
   return (
     <ThemeProvider theme={theme}>
-      <StatusBar
-        barStyle="light-content"
-        backgroundColor="transparent"
-        translucent
-      />
-      <Home />
+      <CarDetails />
     </ThemeProvider>
   );
 }
