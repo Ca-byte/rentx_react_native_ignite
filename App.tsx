@@ -11,7 +11,7 @@ import {
 
 import { Inter_400Regular, Inter_500Medium } from "@expo-google-fonts/inter";
 
-import { CarDetails } from "./src/screens/CarDetails";
+import { Scheduling } from "./src/screens/Scheduling";
 import theme from "./src/styles/theme";
 
 export default function App() {
@@ -27,7 +27,7 @@ export default function App() {
   }
   return (
     <ThemeProvider theme={theme}>
-      <CarDetails />
+      <Scheduling />
     </ThemeProvider>
   );
 }
