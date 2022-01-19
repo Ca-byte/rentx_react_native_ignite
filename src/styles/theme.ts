@@ -10,7 +10,7 @@ export default {
 
     title: "#47474D",
 
-    Line: "#EBEBF0",
+    line: "#EBEBF0",
 
     main: "#DC1637",
     main_light: "#FDEDEF",
