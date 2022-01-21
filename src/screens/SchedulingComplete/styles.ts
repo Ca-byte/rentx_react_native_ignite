@@ -1,14 +1,10 @@
 import styled from "styled-components/native";
 import { RFValue } from "react-native-responsive-fontsize";
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from "react-native-responsive-screen";
 
 export const Container = styled.View`
   flex: 1;
   background-color: ${({ theme }) => theme.colors.header};
-  padding-top: 86px;
+  padding-top: 76px;
 `;
 
 export const Content = styled.View`
