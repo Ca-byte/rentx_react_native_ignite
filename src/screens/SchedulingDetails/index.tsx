@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
 
 import { Button } from "../../components/Button";
 import { BackButton } from "../../components/BackButton";
@@ -43,7 +44,12 @@ import {
 } from "./styles";
 
 export function SchedulingDetails() {
+  const navigation = useNavigation<any>();
   const theme = useTheme();
+
+  function handleSchedulingComplete() {
+    navigation.navigate("SchedulingComplete");
+  }
   return (
     <Container>
       <Header>
@@ -104,7 +110,11 @@ export function SchedulingDetails() {
         </RentalPrice>
       </Content>
       <Footer>
-        <Button title="Alugar agora" color={theme.colors.success} />
+        <Button
+          title="Alugar agora"
+          color={theme.colors.success}
+          onPress={handleSchedulingComplete}
+        />
       </Footer>
     </Container>
   );
