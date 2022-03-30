@@ -19,15 +19,15 @@ export const Header = styled.View`
 
   justify-content: center;
   padding-top: ${getStatusBarHeight() + 30}px;
-  padding: 25px;
+  padding: 20px;
 `;
 
 export const Title = styled.Text`
   color: ${({ theme }) => theme.colors.shape};
   font-family: ${({ theme }) => theme.fonts.secundary_600};
-  font-size: ${RFValue(34)}px;
+  font-size: ${RFValue(30)}px;
 
-  margin-top: 24px;
+  margin-top: 5px;
 `;
 
 export const RentalPeriod = styled.View`

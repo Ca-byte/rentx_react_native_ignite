@@ -28,6 +28,11 @@ export function Scheduling() {
   function handleConfirmScheduling() {
     navigation.navigate("SchedulingDetails");
   }
+
+  function handleBack() {
+    navigation.goBack();
+  }
+
   return (
     <Container>
       <Header>
@@ -36,7 +41,7 @@ export function Scheduling() {
           translucent
           backgroundColor="transparent"
         />
-        <BackButton onPress={() => {}} color={theme.colors.shape} />
+        <BackButton onPress={handleBack} color={theme.colors.shape} />
         <Title>
           Escolha uma {"\n"}
           data de início e {"\n"}

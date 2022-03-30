@@ -18,7 +18,7 @@ export function getAccessoryIcon(type: string) {
       return ForceSvg;
     case "gasoline_motor":
       return GasolineSvg;
-    case "eletric_motor":
+    case "electric_motor":
       return EnergySvg;
     case "hybrid_motor":
       return HybridSvg;
@@ -26,7 +26,6 @@ export function getAccessoryIcon(type: string) {
       return ExchangeSvg;
     case "seats":
       return PeopleSvg;
-
     default:
       return CarSvg;
   }
