@@ -61,7 +61,7 @@ export function Home() {
       <Header>
         <HeaderContent>
           <Logo width={RFValue(108)} height={RFValue(12)} />
-          <CarsTotal>Total de 12 carros</CarsTotal>
+          <CarsTotal>Total de {cars.length} carros</CarsTotal>
         </HeaderContent>
       </Header>
 
