@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { FlatList } from "react-native";
+import { FlatList, ViewToken } from "react-native";
 
 import {
   Container,
@@ -28,10 +28,11 @@ export function ImageSlider({ imageUrl }: Props) {
   return (
     <Container>
       <ImageIndexes>
-        {imageUrl.map((_, index) => {
-          <ImageIndex key={String(index)} active={index === imageIndex} />;
-        })}
+        {imageUrl.map((_, index) => (
+          <ImageIndex key={String(index)} active={index === imageIndex} />
+        ))}
       </ImageIndexes>
+
       <FlatList
         data={imageUrl}
         keyExtractor={(key) => key}
