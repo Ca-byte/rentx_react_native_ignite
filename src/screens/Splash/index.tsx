@@ -1,48 +1,62 @@
-import React from "react";
-import { Button, StyleSheet, Dimensions } from "react-native";
+import React, { useEffect } from "react";
+
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
   withTiming,
-  Easing,
+  interpolate,
+  Extrapolate,
 } from "react-native-reanimated";
 
 import { Container } from "./styles";
-
-const WIDTH = Dimensions.get("window").width;
+import BrandSvg from "../../assets/brand.svg";
+import LogoSvg from "../../assets/logo.svg";
 
 export function Splash() {
-  const animation = useSharedValue(0);
+  const splashAnimation = useSharedValue(0);
 
-  const animatedStyles = useAnimatedStyle(() => {
+  const brandStyle = useAnimatedStyle(() => {
     return {
+      opacity: interpolate(
+        splashAnimation.value,
+        [0, 20, 40, 60],
+        [1, 0.7, 0.3, 0]
+      ),
+
       transform: [
         {
-          translateX: withTiming(animation.value, {
-            duration: 3000,
-            easing: Easing.elastic(5),
-          }),
+          translateY: interpolate(
+            splashAnimation.value,
+            [0, 60],
+            [0, -60],
+            Extrapolate.CLAMP
+          ),
         },
       ],
     };
   });
+  const logoStyle = useAnimatedStyle(() => {
+    return {
+      opacity: interpolate(
+        splashAnimation.value,
+        [0, 20, 40, 60],
+        [0, 0.3, 0.7, 1]
+      ),
+    };
+  });
 
-  function handleAnimationPosition() {
-    animation.value = Math.random() * (WIDTH - 100);
-  }
+  useEffect(() => {
+    splashAnimation.value = withTiming(60, { duration: 1000 });
+  }, []);
   return (
     <Container>
-      <Animated.View style={[styles.box, animatedStyles]} />
+      <Animated.View style={brandStyle}>
+        <BrandSvg width={80} height={50} />
+      </Animated.View>
 
-      <Button title="Mover" onPress={handleAnimationPosition} />
+      <Animated.View style={logoStyle}>
+        <LogoSvg width={180} height={20} />
+      </Animated.View>
     </Container>
   );
 }
-
-const styles = StyleSheet.create({
-  box: {
-    backgroundColor: "purple",
-    width: 100,
-    height: 100,
-  },
-});
