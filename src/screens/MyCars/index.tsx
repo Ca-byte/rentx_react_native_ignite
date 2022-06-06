@@ -5,7 +5,7 @@ import { AntDesign } from "@expo/vector-icons";
 import { api } from "../../services/api";
 import { FlatList, StatusBar } from "react-native";
 import { BackButton } from "../../components/BackButton";
-import { Load } from "../../components/Load";
+import { LoadAnimation } from "../../components/LoadAnimation";
 import { Car } from "../../components/Car";
 
 import {
@@ -74,7 +74,7 @@ export function MyCars() {
         <SubTitle>Conforto, segurança e praticidade.</SubTitle>
       </Header>
       {loading ? (
-        <Load />
+        <LoadAnimation />
       ) : (
         <Content>
           <Appointments>
